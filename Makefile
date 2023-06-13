@@ -3,12 +3,15 @@ NAME = cub3D
 PATH_INCS = ./includes/
 PATH_OBJS = ./objects/
 PATH_SRCS = ./sources/
-PATH_STTS = $(PATH_SRCS)states/
+PATH_STTS = $(PATH_SRCS)state_machine/
 PATH_TOOL = $(PATH_SRCS)tools/
 
 SRCS = $(addprefix $(PATH_TOOL),\
 		ft_calloc.c\
+		ft_strdup.c\
 		ft_strlen.c)\
+		$(addprefix $(PATH_STTS),\
+		cub3d_clean.c)\
 		$(addprefix $(PATH_SRCS),\
 		check_args.c\
 		main.c)
@@ -26,7 +29,7 @@ $(NAME): $(OBJS)
 
 $(PATH_OBJS)%.o: $(PATH_SRCS)%.c
 	@mkdir -p $(PATH_OBJS)
-	@mkdir -p $(PATH_OBJS)states/
+	@mkdir -p $(PATH_OBJS)state_machine/
 	@mkdir -p $(PATH_OBJS)tools/
 	$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
 

@@ -6,17 +6,42 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 07:40:47 by ridalgo-          #+#    #+#             */
-/*   Updated: 2023/06/13 08:49:57 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2023/06/13 09:26:27 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/cub3D.h"
 
-//IN PROGRESS
+/*
+* The main function is responsible for the game loop. Checks the arguments,
+* allocates memory for the game struct, and calls the functions responsible for
+* each state of the game.
+
+* Returns CONTROL_OK if everything is ok.
+*/
 int	main(int argc, char **argv)
 {
 	t_game	*game;
 
-	(void)game;
 	check_args(argc, argv);
+	game = (t_game *)ft_calloc(1, sizeof(t_game));
+	if (!game)
+	{
+		write(2, MSG_MEMORY, ft_strlen(MSG_MEMORY));
+		exit(ERR_MEMORY);
+	}
+	while (YES)
+	{
+		if (game->state == INIT_STATE)
+			game->state = LOAD_STATE;
+		else if (game->state == LOAD_STATE)
+			game->state = MENU_STATE;
+		else if (game->state == MENU_STATE)
+			game->state = PLAY_STATE;
+		else if (game->state == PLAY_STATE)
+			game->state = CLEAN_STATE;
+		else if (game->state == CLEAN_STATE)
+			cub3d_clean(game);
+	}
+	return (CONTROL_OK);
 }

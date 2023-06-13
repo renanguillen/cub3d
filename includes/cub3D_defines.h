@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 07:50:14 by ridalgo-          #+#    #+#             */
-/*   Updated: 2023/06/13 08:39:01 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2023/06/13 09:02:00 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@
 
 // States
 
-//EXIT: The program is about to exit.
-# define EXIT_STATE -1
 //INIT: The program is initializing, memory is being allocated and parameters
 //are being set.
 # define INIT_STATE 0
@@ -31,6 +29,8 @@
 # define MENU_STATE 2
 //PLAY: The game is running, controls are set to game controls.
 # define PLAY_STATE 3
+//CLEAN: The program is cleaning up, freeing memory and exiting.
+# define CLEAN_STATE 4
 
 // Exit codes
 
