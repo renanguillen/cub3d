@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 07:44:49 by ridalgo-          #+#    #+#             */
-/*   Updated: 2023/06/13 08:17:46 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2023/06/13 09:12:32 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,10 @@
 
 typedef struct s_game
 {
-	int	starting_orientation;
-	int	exit_code;
-	int	state;
+	int		starting_orientation;
+	int		exit_code;
+	int		state;
+	char	*exit_message;
 }	t_game;
 
 #endif

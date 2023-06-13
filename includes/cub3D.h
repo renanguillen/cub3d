@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 07:41:53 by ridalgo-          #+#    #+#             */
-/*   Updated: 2023/06/13 08:45:07 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2023/06/13 09:25:50 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,14 @@
 
 int		check_args(int argc, char **argv);
 
+//STATES
+
+void	cub3d_clean(t_game *game);
+
 //FT_TOOLS
 
 void	*ft_calloc(size_t num_elements, size_t element_size);
+char	*ft_strdup(char *tobecopied);
 int		ft_strlen(char *str);
-
 
 #endif
