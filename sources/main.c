@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 07:40:47 by ridalgo-          #+#    #+#             */
-/*   Updated: 2023/06/15 03:58:53 by aminoru-         ###   ########.fr       */
+/*   Updated: 2023/06/15 20:47:24 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,7 @@
 int	main(int argc, char **argv)
 {
 	t_game	*game;
-	char	*map;
 
-	check_args(argc, argv);
-	map = map_load(argv[1]);
 	game = (t_game *)ft_calloc(1, sizeof(t_game));
 	if (!game)
 	{
@@ -35,7 +32,7 @@ int	main(int argc, char **argv)
 	while (YES)
 	{
 		if (game->state == INIT_STATE)
-			game->state = LOAD_STATE;
+			cub3d_init(game, argc, argv);
 		else if (game->state == LOAD_STATE)
 			game->state = MENU_STATE;
 		else if (game->state == MENU_STATE)

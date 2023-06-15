@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d_clean.c                                      :+:      :+:    :+:   */
+/*   call_exit.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/13 09:09:35 by ridalgo-          #+#    #+#             */
-/*   Updated: 2023/06/15 20:52:31 by ridalgo-         ###   ########.fr       */
+/*   Created: 2023/06/15 20:40:11 by ridalgo-          #+#    #+#             */
+/*   Updated: 2023/06/15 20:40:25 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/cub3D.h"
+#include "../includes/cub3D.h"
 
-/*
-* Frees the memory allocated for the game struct and exits the program with
-* the proper exit code and message stored in the game struct.
-
-* Returns nothing.
-*/
-void	cub3d_clean(t_game *game)
+int	call_exit(t_game *game, int exit_code, char *exit_message)
 {
-	int	exit_code;
-
-	exit_code = game->exit_code;
+	game->exit_code = exit_code;
 	if (game->exit_message)
-	{
-		write(2, game->exit_message, ft_strlen(game->exit_message));
 		free(game->exit_message);
-	}
-	free(game);
-	exit(exit_code);
+	game->exit_message = ft_strdup(exit_message);
+	game->state = CLEAN_STATE;
+	return (game->exit_code);
 }
