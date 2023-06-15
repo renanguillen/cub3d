@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+         #
+#    By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/15 01:31:01 by aminoru-          #+#    #+#              #
-#    Updated: 2023/06/15 03:59:55 by aminoru-         ###   ########.fr        #
+#    Updated: 2023/06/15 20:48:07 by ridalgo-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,10 +24,10 @@ SRCS = $(addprefix $(PATH_TOOL),\
 		ft_strlen.c\
 		ft_strncmp.c)\
 		$(addprefix $(PATH_STTS),\
-		cub3d_clean.c)\
+		cub3d_clean.c\
+		cub3d_init.c)\
 		$(addprefix $(PATH_SRCS),\
-		check_args.c\
-		map_load.c\
+		call_exit.c\
 		main.c)
 
 OBJS = $(patsubst $(PATH_SRCS)%.c, $(PATH_OBJS)%.o, $(SRCS))

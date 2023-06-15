@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_args.c                                       :+:      :+:    :+:   */
+/*   cub3d_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 08:41:54 by ridalgo-          #+#    #+#             */
-/*   Updated: 2023/06/15 03:54:37 by aminoru-         ###   ########.fr       */
+/*   Updated: 2023/06/15 20:53:03 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/cub3D.h"
+#include "../../includes/cub3D.h"
 
 //NEEDS TO BE IMPLEMENTED
-static int	validate_map(int fd)
+static int	validate_map(t_game *game, int fd)
 {
 	(void)fd;
 	return (CONTROL_OK);
@@ -25,19 +25,21 @@ static int	validate_map(int fd)
 
 * Returns CONTROL_OK if everything is ok.
 */
-static int	check_map(char *map_path)
+static int	check_map(t_game *game, char *map_path)
 {
-	int	fd;
+	int		fd;
+	size_t	nlen;
 
+	nlen = ft_strlen(map_path);
+	if (ft_strncmp(&map_path[nlen - 4], ".cub", 4))
+		return (call_exit(game, ERR_MAP, MSG_EXTENSION));
 	fd = open(map_path, O_RDONLY);
 	if (fd == -1)
-	{
-		write(2, MSG_MAP, ft_strlen(MSG_MAP));
-		exit(ERR_MAP);
-	}
+		return (call_exit(game, ERR_MAP, MSG_UNABLE_OPEN));
 	else
 		validate_map(fd);
 	close (fd);
+	game->state = LOAD_STATE;
 	return (CONTROL_OK);
 }
 
@@ -47,14 +49,10 @@ static int	check_map(char *map_path)
 
 * Returns CONTROL_OK if everything is ok.
 */
-int	check_args(int argc, char **argv)
+int	cub3d_init(t_game *game, int argc, char **argv)
 {
 	if (argc == 2)
-		check_map(argv[1]);
+		return (check_map(game, argv[1]));
 	else
-	{
-		write(2, MSG_ARGS, ft_strlen(MSG_ARGS));
-		exit(ERR_ARGS);
-	}
-	return (CONTROL_OK);
+		return (call_exit(game, ERR_ARGS, MSG_ARGS));
 }

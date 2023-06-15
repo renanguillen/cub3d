@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3D.h                                            :+:      :+:    :+:   */
+/*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 07:41:53 by ridalgo-          #+#    #+#             */
-/*   Updated: 2023/06/15 03:59:38 by aminoru-         ###   ########.fr       */
+/*   Updated: 2023/06/15 20:41:13 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,12 @@
 
 //MAIN
 
-int		check_args(int argc, char **argv);
-int		open_map(char *name);
-char	*map_load(char *name_map);
+int		call_exit(t_game *game, int exit_code, char *exit_message);
 
 //STATES
 
 void	cub3d_clean(t_game *game);
+int		cub3d_init(t_game *game, int argc, char **argv);
 
 //FT_TOOLS
 
