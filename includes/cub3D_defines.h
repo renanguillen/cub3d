@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d_defines.h                                    :+:      :+:    :+:   */
+/*   cub3D_defines.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 07:50:14 by ridalgo-          #+#    #+#             */
-/*   Updated: 2023/06/13 09:02:00 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2023/06/15 03:33:14 by aminoru-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,7 @@
 # define MSG_ARGS "Error(1): Invalid number of arguments.\n"
 # define MSG_MAP "Error(2): Invalid map path or configuration.\n"
 # define MSG_MEMORY "Error(3): Memory allocation failed.\n"
+# define MSG_EXTENSION "Error(1): Wrong file extension.\n"
+# define MSG_UNABLE_OPEN "Error(1): Unable to open given map file.\n"
 
 #endif

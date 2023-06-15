@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 07:40:47 by ridalgo-          #+#    #+#             */
-/*   Updated: 2023/06/13 09:26:27 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2023/06/15 03:58:53 by aminoru-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,10 @@
 int	main(int argc, char **argv)
 {
 	t_game	*game;
+	char	*map;
 
 	check_args(argc, argv);
+	map = map_load(argv[1]);
 	game = (t_game *)ft_calloc(1, sizeof(t_game));
 	if (!game)
 	{

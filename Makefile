@@ -6,7 +6,7 @@
 #    By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/15 01:31:01 by aminoru-          #+#    #+#              #
-#    Updated: 2023/06/15 01:31:02 by aminoru-         ###   ########.fr        #
+#    Updated: 2023/06/15 03:59:55 by aminoru-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,11 +21,13 @@ PATH_TOOL = $(PATH_SRCS)tools/
 SRCS = $(addprefix $(PATH_TOOL),\
 		ft_calloc.c\
 		ft_strdup.c\
-		ft_strlen.c)\
+		ft_strlen.c\
+		ft_strncmp.c)\
 		$(addprefix $(PATH_STTS),\
 		cub3d_clean.c)\
 		$(addprefix $(PATH_SRCS),\
 		check_args.c\
+		map_load.c\
 		main.c)
 
 OBJS = $(patsubst $(PATH_SRCS)%.c, $(PATH_OBJS)%.o, $(SRCS))
