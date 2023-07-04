@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 08:41:54 by ridalgo-          #+#    #+#             */
-/*   Updated: 2023/06/15 20:53:03 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2023/07/04 11:17:28 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 static int	validate_map(t_game *game, int fd)
 {
 	(void)fd;
+	(void)game;
 	return (CONTROL_OK);
 }
 
@@ -37,7 +38,7 @@ static int	check_map(t_game *game, char *map_path)
 	if (fd == -1)
 		return (call_exit(game, ERR_MAP, MSG_UNABLE_OPEN));
 	else
-		validate_map(fd);
+		validate_map(game, fd);
 	close (fd);
 	game->state = LOAD_STATE;
 	return (CONTROL_OK);

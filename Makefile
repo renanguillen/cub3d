@@ -6,7 +6,7 @@
 #    By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/15 01:31:01 by aminoru-          #+#    #+#              #
-#    Updated: 2023/06/15 20:48:07 by ridalgo-         ###   ########.fr        #
+#    Updated: 2023/07/04 11:42:24 by ridalgo-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,8 @@ SRCS = $(addprefix $(PATH_TOOL),\
 		ft_strncmp.c)\
 		$(addprefix $(PATH_STTS),\
 		cub3d_clean.c\
-		cub3d_init.c)\
+		cub3d_init.c\
+		cub3d_load.c)\
 		$(addprefix $(PATH_SRCS),\
 		call_exit.c\
 		main.c)
@@ -33,13 +34,15 @@ SRCS = $(addprefix $(PATH_TOOL),\
 OBJS = $(patsubst $(PATH_SRCS)%.c, $(PATH_OBJS)%.o, $(SRCS))
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
-IFLAGS = -I $(PATH_INCS)
+CFLAGS = -Wall -Wextra -Werror -g
+LFLAGS = -L /opt/X11/lib -L /usr/local/lib -lX11 -lXext -lmlx -lm
+IFLAGS = -I $(PATH_INCS) -I /opt/X11/include -I /usr/local/include
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(IFLAGS) -o $(NAME) $(OBJS)
+	$(CC) $(CFLAGS) $(IFLAGS) $(OBJS) $(LFLAGS) -o $(NAME)
+
 
 $(PATH_OBJS)%.o: $(PATH_SRCS)%.c
 	@mkdir -p $(PATH_OBJS)

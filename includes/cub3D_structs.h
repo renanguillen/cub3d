@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d_structs.h                                    :+:      :+:    :+:   */
+/*   cub3D_structs.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 07:44:49 by ridalgo-          #+#    #+#             */
-/*   Updated: 2023/06/15 20:53:27 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2023/07/04 11:03:49 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,12 @@ typedef struct s_map
 	t_game	*game;
 }	t_map;
 
+typedef struct s_mlx
+{
+	void	*ptr;
+	void	*win;
+}	t_mlx;
+
 typedef struct s_game
 {
 	int		starting_orientation;
@@ -29,6 +35,7 @@ typedef struct s_game
 	int		state;
 	char	*exit_message;
 	t_map	*map;
+	t_mlx	*mlx;
 }	t_game;
 
 #endif

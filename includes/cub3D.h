@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d.h                                            :+:      :+:    :+:   */
+/*   cub3D.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 07:41:53 by ridalgo-          #+#    #+#             */
-/*   Updated: 2023/06/15 20:41:13 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2023/07/04 11:21:58 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <fcntl.h>
+# include <mlx.h>
+# include <X11/X.h>
+# include <X11/keysym.h>
 # include "./cub3D_structs.h"
 # include "./cub3D_defines.h"
 
@@ -29,6 +32,7 @@ int		call_exit(t_game *game, int exit_code, char *exit_message);
 
 void	cub3d_clean(t_game *game);
 int		cub3d_init(t_game *game, int argc, char **argv);
+int		cub3d_load(t_game *game);
 
 //FT_TOOLS
 

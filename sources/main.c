@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 07:40:47 by ridalgo-          #+#    #+#             */
-/*   Updated: 2023/06/15 20:47:24 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2023/07/04 11:19:19 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,15 @@ int	main(int argc, char **argv)
 {
 	t_game	*game;
 
+	(void)argc;
+	(void)argv;
 	game = (t_game *)ft_calloc(1, sizeof(t_game));
 	if (!game)
 	{
 		write(2, MSG_MEMORY, ft_strlen(MSG_MEMORY));
 		exit(ERR_MEMORY);
 	}
+	game->state = LOAD_STATE;
 	while (YES)
 	{
 		if (game->state == INIT_STATE)

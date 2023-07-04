@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3D_defines.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 07:50:14 by ridalgo-          #+#    #+#             */
-/*   Updated: 2023/06/15 03:33:14 by aminoru-         ###   ########.fr       */
+/*   Updated: 2023/07/04 10:59:46 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 
 # define YES 1
 # define NO 0
+# define WIN_WIDTH 1000
+# define WIN_HEIGHT 500
 
 // States
 
