@@ -39,6 +39,21 @@ static t_map	*init_map(char *patch)
 	return (map);
 }
 
+static t_player	*init_player(void)
+{
+	t_player	*player;
+
+	player = NULL;
+	player = ft_calloc(sizeof(t_player), 1);
+	if (player == NULL)
+		return (NULL);
+	player->pos_x = 0;
+	player->pos_y = 0;
+	player->angle = 0;
+	player->turn_speed = (PI / 180);
+	return (player);
+}
+
 t_data  *init(char *patch)
 {
     t_data  *data;
@@ -49,4 +64,11 @@ t_data  *init(char *patch)
         return (NULL);
     data->map = init_map(patch);
 	data->image = init_image();
+    data->n_texture = NULL;
+	data->s_texture = NULL;
+	data->w_texture = NULL;
+	data->e_texture = NULL;
+	data->player = init_player();
+    data->dist_proj_plane = (WIN_WIDTH / 2) / tan(FOV_ANGLE / 2);
+    init_rays(data);
 }
