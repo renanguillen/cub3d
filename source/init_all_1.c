@@ -54,7 +54,7 @@ static t_player	*init_player(void)
 	return (player);
 }
 
-t_data  *init(char *patch)
+t_data  *init_all(char *patch)
 {
     t_data  *data;
 
@@ -71,4 +71,8 @@ t_data  *init(char *patch)
 	data->player = init_player();
     data->dist_proj_plane = (WIN_WIDTH / 2) / tan(FOV_ANGLE / 2);
     init_rays(data);
+	data->mlx = NULL;
+	data->win = NULL;
+	data->close_game = 0;
+	return (data);
 }
