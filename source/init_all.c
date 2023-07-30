@@ -3,6 +3,19 @@
 
 #include "cub3d.h"
 
+static t_image	*init_image(void)
+{
+	t_image	*image;
+
+	image = NULL;
+	image = ft_calloc(sizeof(t_image), 1);
+	if (image == NULL)
+		return (NULL);
+	image->pont = NULL;
+	image->patch = NULL;
+	return (image);
+}
+
 static t_map	*init_map(char *patch)
 {
 	t_map	*map;
@@ -35,5 +48,5 @@ t_data  *init(char *patch)
     if (data == NULL)
         return (NULL);
     data->map = init_map(patch);
-
+	data->image = init_image();
 }
