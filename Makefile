@@ -1,66 +1,33 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/06/15 01:31:01 by aminoru-          #+#    #+#              #
-#    Updated: 2023/06/15 20:48:07 by ridalgo-         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
 
-NAME = cub3D
+NAME = cub3d
 
-PATH_INCS = ./includes/
-PATH_OBJS = ./objects/
-PATH_SRCS = ./sources/
-PATH_STTS = $(PATH_SRCS)state_machine/
-PATH_TOOL = $(PATH_SRCS)tools/
+LIBFTPATH = ./lib/libft/
+LIBFT = ./lib/libft/libft.a
+CC = gcc
+CFLAG = -Wall -Werror -Wextra
+INCS = -I ./include/
+SRCS = 	./src/main.c \
 
-SRCS = $(addprefix $(PATH_TOOL),\
-		ft_calloc.c\
-		ft_strdup.c\
-		ft_strlen.c\
-		ft_strncmp.c)\
-		$(addprefix $(PATH_STTS),\
-		cub3d_clean.c\
-		cub3d_init.c)\
-		$(addprefix $(PATH_SRCS),\
-		call_exit.c\
-		main.c)
 
-OBJS = $(patsubst $(PATH_SRCS)%.c, $(PATH_OBJS)%.o, $(SRCS))
+OBJS = ${SRCS:.c=.o}
 
-CC = cc
-CFLAGS = -Wall -Wextra -Werror
-IFLAGS = -I $(PATH_INCS)
+all: ${NAME}
 
-all: $(NAME)
+${NAME}: ${OBJS} 
+			make -C $(LIBFTPATH)
+			${CC} -o ${NAME} ${CFLAG} ${OBJS} ${LIBFT} ${READFLAGS}
 
-$(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(IFLAGS) -o $(NAME) $(OBJS)
-
-$(PATH_OBJS)%.o: $(PATH_SRCS)%.c
-	@mkdir -p $(PATH_OBJS)
-	@mkdir -p $(PATH_OBJS)state_machine/
-	@mkdir -p $(PATH_OBJS)tools/
-	$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
+.c.o:
+			${CC} ${CFLAG} ${INCS} -c $< -o ${<:.c=.o}
 
 clean:
-	@rm -rf $(PATH_OBJS)
+			make clean -C ./lib/libft
+			rm -f ${OBJS}
 
 fclean: clean
-	@rm -f $(NAME)
+			make fclean -C ./lib/libft
+			rm -f ${NAME}
 
 re: fclean all
 
-r: all
-	@clear
-	@./cub3D ./maps/run.cub
-
-n:
-	@clear
-	@norminette ./sources ./includes
-
-PHONY: all clean fclean re r n
+.PHONY: all clean fclean re
