@@ -13,6 +13,6 @@ int	build_cub(t_data *data)
 		ft_matrix_strdel(file);
 		return (1);
 	}
-
+	extract_contents(data, file);
 
 }
