@@ -29,6 +29,9 @@ static int verify_args(int argc, char **argv)
 
 int main(int argc, char **argv)
 {
+    t_data  *data;
+
     if (verify_args(argc, argv))
         return (0);
+    data = init_all(argv[1]);
 }
