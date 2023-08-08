@@ -23,7 +23,13 @@ static void extract_contents(t_data *data, char **file)
 	extract_map(data, file);
 }
 
-int	build_cub(t_data *data)
+static void	configure_aux(t_data *data)
+{
+	data->map->color_floor = convert_hex(data->map->str_floor);
+	data->map->color_sky = convert_hex(data->map->str_sky);
+}
+
+int	build_data(t_data *data)
 {
 	char	**file;
 
@@ -41,5 +47,6 @@ int	build_cub(t_data *data)
 		ft_matrix_strdel(file);
 		return (1);
 	}
+	configure_aux(data);
 
 }
