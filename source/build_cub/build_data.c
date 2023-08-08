@@ -1,6 +1,16 @@
 
 #include "cub3d.h"
 
+static int	check_refined_contents(t_data *data)
+{
+	if (check_refined_texture(data))
+		return (1);
+	if (check_refined_color(data))
+		return (1);
+	if (check_refined_map(data))
+		return (1);
+	return (0);
+}
 
 static void extract_contents(t_data *data, char **file)
 {
@@ -26,5 +36,10 @@ int	build_cub(t_data *data)
 		return (1);
 	}
 	extract_contents(data, file);
+	if (check_refined_contents(data))
+	{
+		ft_matrix_strdel(file);
+		return (1);
+	}
 
 }
