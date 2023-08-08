@@ -1,4 +1,3 @@
-
 #include "cub3d.h"
 
 static int	check_refined_contents(t_data *data)
@@ -12,14 +11,14 @@ static int	check_refined_contents(t_data *data)
 	return (0);
 }
 
-static void extract_contents(t_data *data, char **file)
+static void	extract_contents(t_data *data, char **file)
 {
-	data->map->no_path = extract_content(file, "NO ",1);
-	data->map->so_path = extract_content(file, "SO ",1);
-	data->map->we_path = extract_content(file, "WE ",1);
-	data->map->ea_path = extract_content(file, "EA ",1);
-	data->map->str_sky = extract_content(file, "C ",1);
-	data->map->str_floor = extract_content(file, "F ",1);
+	data->map->no_path = extract_content(file, "NO ", 1);
+	data->map->so_path = extract_content(file, "SO ", 1);
+	data->map->we_path = extract_content(file, "WE ", 1);
+	data->map->ea_path = extract_content(file, "EA ", 1);
+	data->map->str_sky = extract_content(file, "C ", 1);
+	data->map->str_floor = extract_content(file, "F ", 1);
 	extract_map(data, file);
 }
 
@@ -48,5 +47,6 @@ int	build_data(t_data *data)
 		return (1);
 	}
 	configure_aux(data);
-
+	ft_matrix_strdel(file);
+	return (0);
 }
