@@ -34,8 +34,9 @@ int main(int argc, char **argv)
     if (verify_args(argc, argv))
         return (0);
     data = init_all(argv[1]);
-	if (build_cub(data))
+	if (build_data(data))
 	{
+		destroy(data);
 		return (0);
 	}
 	return (0);
