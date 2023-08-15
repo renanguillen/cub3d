@@ -39,5 +39,6 @@ int main(int argc, char **argv)
 		destroy(data);
 		return (0);
 	}
+	get_player(data);
 	return (0);
 }
