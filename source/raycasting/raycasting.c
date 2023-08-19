@@ -1,5 +1,22 @@
 #include "cub3d.h"
 
+void	clear_ray(t_ray *ray)
+{
+	clear_inter(ray->hrz);
+	clear_inter(ray->vert);
+	ray->render->proj_wall_height = 0;
+	ray->render->wall_bottom_pixel = 0;
+	ray->render->wall_top_pixel = 0;
+	ray->render->wall_strip_height = 0;
+	ray->ray_angle = 0;
+	ray->distance = 0;
+	ray->vertical_wall = 0;
+	ray->is_facing_down = 0;
+	ray->is_facing_up = 0;
+	ray->is_facing_right = 0;
+	ray->is_facing_left = 0;
+}
+
 void	raycasting(t_data *data)
 {
 	double	ray_angle;
