@@ -6,7 +6,7 @@
 /*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 03:12:36 by aminoru-          #+#    #+#             */
-/*   Updated: 2023/08/19 03:12:41 by aminoru-         ###   ########.fr       */
+/*   Updated: 2023/08/19 03:44:16 by aminoru-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 # include <fcntl.h>
 # include <math.h>
 # include <mlx.h>
-# include "../libs/libft/libft.h"
+# include "../libft/libft.h"
 
 t_data	*init(char *patch);
 void	init_rays(t_data *data);

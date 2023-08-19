@@ -6,7 +6,7 @@
 #    By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/05 16:30:03 by aminoru-          #+#    #+#              #
-#    Updated: 2023/08/19 03:28:38 by aminoru-         ###   ########.fr        #
+#    Updated: 2023/08/19 03:44:46 by aminoru-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,12 +15,11 @@ NAME	=	libft.a
 CC		=	gcc
 CFLAGS	=	-Wall -Werror -Wextra
 LIBFT	= libft.h
-GETNEXTLINE = get_next_line.h
 SRCS	=	ft_atoi.c ft_memchr.c ft_strdel.c ft_strtrim.c \
 			ft_bzero.c ft_memcmp.c ft_strdup.c ft_substr.c \
 			ft_calloc.c ft_memcpy.c ft_striteri.c ft_tolower.c \
 			ft_isalnum.c ft_memmove.c ft_strjoin.c ft_toupper.c \
-			ft_isalpha.c ft_memset.c ft_strlcat.c get_next_line.c \
+			ft_isalpha.c ft_memset.c ft_strlcat.c \
 			ft_isascii.c ft_putchar_fd.c ft_strlcpy.c  \
 			ft_isdigit.c ft_putendl_fd.c ft_strlen.c  \
 			ft_isprint.c ft_matrix_join.c ft_putnbr_fd.c ft_strmapi.c \
@@ -32,7 +31,7 @@ OBJS	=	${SRCS:.c=.o}
 
 all: 		${NAME} 
 
-${NAME}: 	${OBJS} $(LIBFT) $(GETNEXTLINE)
+${NAME}: 	${OBJS} $(LIBFT) 
 				ar -rcs ${NAME} ${OBJS}
 				ranlib ${NAME}
 
