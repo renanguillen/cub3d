@@ -1,4 +1,3 @@
-
 #include "cub3d.h"
 
 int	render_loop(t_data **data)
@@ -34,7 +33,7 @@ static int	start_mlx(t_data *data)
 	return (0);
 }
 
-static int verify_args(int argc, char **argv)
+static int	check_args(int argc, char **argv)
 {
 	int		len;
 	char	*str;
@@ -57,16 +56,23 @@ static int verify_args(int argc, char **argv)
 		printf("Error\nInvalid map extension. Use .cub\n");
 		return (1);
 	}
-	return (0);   
+	return (0);
 }
 
-int main(int argc, char **argv)
+static int	close_game(t_data *data)
 {
-    t_data  *data;
+	mlx_loop_end(data->mlx);
+	destroy(data);
+	return (0);
+}
 
-    if (verify_args(argc, argv))
-        return (0);
-    data = init_all(argv[1]);
+int	main(int argc, char **argv)
+{
+	t_data	*data;
+
+	if (check_args(argc, argv))
+		return (0);
+	data = init(argv[1]);
 	if (build_data(data))
 	{
 		destroy(data);

@@ -1,3 +1,5 @@
+#include "cub3d.h"
+
 int	wall_collision(double x, double y, t_data *data)
 {
 	int	i;

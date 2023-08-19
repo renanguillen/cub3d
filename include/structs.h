@@ -31,14 +31,6 @@ typedef struct s_map
 	int		color_sky;
 }	t_map;
 
-typedef struct s_render
-{
-	double	proj_wall_height;
-	int		wall_bottom_pixel;
-	int		wall_top_pixel;
-	int		wall_strip_height;
-}	t_render;
-
 typedef struct s_player
 {
 	double	pos_x;
@@ -46,6 +38,14 @@ typedef struct s_player
 	double	turn_speed;
 	double	angle;
 }	t_player;
+
+typedef struct s_render
+{
+	double	proj_wall_height;
+	int		wall_bottom_pixel;
+	int		wall_top_pixel;
+	int		wall_strip_height;
+}	t_render;
 
 typedef struct s_inter
 {
@@ -87,4 +87,4 @@ typedef struct s_data
 	t_ray		rays[NUM_RAYS];
 }	t_data;
 
-#endif
+#endif /* CUB3D_H */
