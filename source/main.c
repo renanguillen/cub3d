@@ -1,6 +1,12 @@
 
 #include "cub3d.h"
 
+int	render_loop(t_data **data)
+{
+	render(*data);
+	return (0);
+}
+
 static int	start_mlx(t_data *data)
 {
 	data->mlx = mlx_init();
