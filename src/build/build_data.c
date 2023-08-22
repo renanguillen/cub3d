@@ -6,19 +6,19 @@
 /*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 03:13:37 by aminoru-          #+#    #+#             */
-/*   Updated: 2023/08/19 03:13:38 by aminoru-         ###   ########.fr       */
+/*   Updated: 2023/08/23 01:37:42 by aminoru-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-static int	check_refined_contents(t_data *data)
+static int	check_detail_contents(t_data *data)
 {
-	if (check_refined_texture(data))
+	if (check_detail_texture(data))
 		return (1);
-	if (check_refined_color(data))
+	if (check_detail_color(data))
 		return (1);
-	if (check_refined_map(data))
+	if (check_detail_map(data))
 		return (1);
 	return (0);
 }
@@ -53,7 +53,7 @@ int	build_data(t_data *data)
 		return (1);
 	}
 	extract_contents(data, file);
-	if (check_refined_contents(data))
+	if (check_detail_contents(data))
 	{
 		ft_matrix_strdel(file);
 		return (1);

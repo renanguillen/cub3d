@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   refined_textures.c                                 :+:      :+:    :+:   */
+/*   detail_textures.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -27,7 +27,7 @@ static int	check_path(char *path)
 	return (0);
 }
 
-int	check_refined_texture(t_data *data)
+int	check_detail_texture(t_data *data)
 {
 	int	status;
 

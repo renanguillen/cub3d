@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   refined_color.c                                    :+:      :+:    :+:   */
+/*   detail_color.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -57,7 +57,7 @@ static int	check_color(char *color)
 	return (0);
 }
 
-int	check_refined_color(t_data *data)
+int	check_detail_color(t_data *data)
 {
 	if (check_color(data->map->str_sky))
 	{

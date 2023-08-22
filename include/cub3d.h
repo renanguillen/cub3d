@@ -6,7 +6,7 @@
 /*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 03:12:36 by aminoru-          #+#    #+#             */
-/*   Updated: 2023/08/23 00:39:56 by aminoru-         ###   ########.fr       */
+/*   Updated: 2023/08/23 01:37:42 by aminoru-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ int		build_data(t_data *data);
 int		is_line_map(char *element);
 int		convert_hex(char *color);
 int		check_contents_file(char **file);
-int		check_refined_texture(t_data *data);
-int		check_refined_color(t_data *data);
-int		check_refined_map(t_data *data);
+int		check_detail_texture(t_data *data);
+int		check_detail_color(t_data *data);
+int		check_detail_map(t_data *data);
 int		check_walls(t_map *map);
 int		check_player(char **map);
 int		load_textures(t_data *data);

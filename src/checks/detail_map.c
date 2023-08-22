@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   refined_map.c                                      :+:      :+:    :+:   */
+/*   detail_map.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -74,7 +74,7 @@ static int	check_characters_map(char **map)
 	return (0);
 }
 
-int	check_refined_map(t_data *data)
+int	check_detail_map(t_data *data)
 {
 	if (check_walls(data->map))
 	{

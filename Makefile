@@ -6,7 +6,7 @@
 #    By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/19 03:16:04 by aminoru-          #+#    #+#              #
-#    Updated: 2023/08/23 01:24:21 by aminoru-         ###   ########.fr        #
+#    Updated: 2023/08/23 01:38:18 by aminoru-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,10 +24,10 @@ SRCS = 	./src/main.c \
 		./src/load.c \
 		./src/key_hook.c \
 		./src/checks/contents_file.c \
-		./src/checks/refined_color.c \
-		./src/checks/refined_map_aux.c \
-		./src/checks/refined_map.c \
-		./src/checks/refined_textures.c \
+		./src/checks/detail_color.c \
+		./src/checks/detail_map_aux.c \
+		./src/checks/detail_map.c \
+		./src/checks/detail_textures.c \
 		./src/extract/extract_maps.c \
 		./src/extract/extract_contens.c \
 		./src/build/build_data.c \
