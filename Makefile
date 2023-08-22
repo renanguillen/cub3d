@@ -16,6 +16,7 @@ LIBFTPATH = ./libft/
 LIBFT = ./libft/libft.a
 CC = gcc
 CFLAG = -Wall -Werror -Wextra
+MLX_LIB = -lbsd -lmlx -lXext -lX11 -lm -lz
 INCS = -I ./include/
 SRCS = 	./src/main.c \
 		./src/init/init_1 ./src/init/init_2 \
@@ -44,7 +45,7 @@ all: ${NAME}
 
 ${NAME}: ${OBJS} 
 			make -C $(LIBFTPATH)
-			${CC} -o ${NAME} ${CFLAG} ${OBJS} ${LIBFT} 
+			${CC} -o ${NAME} ${CFLAG} ${OBJS} ${LIBFT} ${MLX_LIB} -no-pie
 
 .c.o:
 			${CC} ${CFLAG} ${INCS} -c $< -o ${<:.c=.o}
