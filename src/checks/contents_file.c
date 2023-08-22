@@ -6,7 +6,7 @@
 /*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 03:13:14 by aminoru-          #+#    #+#             */
-/*   Updated: 2023/08/19 03:13:15 by aminoru-         ###   ########.fr       */
+/*   Updated: 2023/08/23 00:13:18 by aminoru-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,17 +96,17 @@ int	check_contents_file(char **file)
 	error += check_contents(file, "F ");
 	if (error != 0)
 	{
-		printf("Error\nMap elements error\n");
+		printf(ERROR_MAP_ELEMENT);
 		return (1);
 	}
 	if (check_integrity_map(file))
 	{
-		printf("Error\nWrong line in the map\n");
+		printf(ERROR_WRONG_LINE_MAP);
 		return (1);
 	}	
 	if (check_position_map(file))
 	{
-		printf("Error\nThe map is not the last element\n");
+		printf(ERROR_MAP_NOT_LAST);
 		return (1);
 	}
 	return (0);

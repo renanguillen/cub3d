@@ -6,7 +6,7 @@
 #    By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/19 03:16:04 by aminoru-          #+#    #+#              #
-#    Updated: 2023/08/22 03:10:10 by aminoru-         ###   ########.fr        #
+#    Updated: 2023/08/23 01:24:21 by aminoru-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,20 +20,20 @@ MLX_LIB = -lbsd -lmlx -lXext -lX11 -lm -lz
 
 INCS = -I ./include/
 SRCS = 	./src/main.c \
-		./src/build_cub/checks/contents_file.c \
-		./src/build_cub/checks/refined_color.c \
-		./src/build_cub/checks/refined_map_aux.c \
-		./src/build_cub/checks/refined_map.c \
-		./src/build_cub/checks/refined_textures.c \
-		./src/build_cub/build_data.c \
-		./src/build_cub/extract_maps.c \
-		./src/build_cub/read_file.c \
-		./src/build_cub/build_tools.c \
-		./src/build_cub/extract_contens.c \
-		./src/build_cub/load_texture.c \
+		./src/init.c \
+		./src/load.c \
+		./src/key_hook.c \
+		./src/checks/contents_file.c \
+		./src/checks/refined_color.c \
+		./src/checks/refined_map_aux.c \
+		./src/checks/refined_map.c \
+		./src/checks/refined_textures.c \
+		./src/extract/extract_maps.c \
+		./src/extract/extract_contens.c \
+		./src/build/build_data.c \
+		./src/build/build_tools.c \
 		./src/destroy/destroy.c \
 		./src/destroy/destroy_tools.c \
-		./src/key_hook/key_hook.c \
 		./src/raycasting/draw_all.c \
 		./src/raycasting/intersection.c \
 		./src/raycasting/offset.c \

@@ -6,7 +6,7 @@
 /*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 03:13:28 by aminoru-          #+#    #+#             */
-/*   Updated: 2023/08/19 03:13:30 by aminoru-         ###   ########.fr       */
+/*   Updated: 2023/08/23 00:18:37 by aminoru-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,22 +78,22 @@ int	check_refined_map(t_data *data)
 {
 	if (check_walls(data->map))
 	{
-		printf("Error\nMap walls are wrong\n");
+		printf(ERROR_WALLS);
 		return (1);
 	}
 	if (check_spaces(data->map))
 	{
-		printf("Error\nThe walls of the map are not correctly closed\n");
+		printf(ERROR_WALLS_NOT_CLOSE);
 		return (1);
 	}
 	if (check_player(data->map->map_matrix))
 	{
-		printf("Error\nThe player is wrong\n");
+		printf(ERROR_PLAYER);
 		return (1);
 	}
 	if (check_characters_map(data->map->map_matrix))
 	{
-		printf("Error\nWrong character in map\n");
+		printf(ERROR_CHARACTER);
 		return (1);
 	}
 	return (0);

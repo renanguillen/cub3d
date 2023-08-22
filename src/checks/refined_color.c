@@ -6,7 +6,7 @@
 /*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 03:13:19 by aminoru-          #+#    #+#             */
-/*   Updated: 2023/08/19 03:13:20 by aminoru-         ###   ########.fr       */
+/*   Updated: 2023/08/23 00:15:15 by aminoru-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,12 +61,12 @@ int	check_refined_color(t_data *data)
 {
 	if (check_color(data->map->str_sky))
 	{
-		printf("Error\nSky color is wrong\n");
+		printf(ERROR_SKY_COLOR);
 		return (1);
 	}
 	if (check_color(data->map->str_floor))
 	{
-		printf("Error\nThe floor color is wrong\n");
+		printf(ERROR_FLOOR_COLOR);
 		return (1);
 	}
 	return (0);
