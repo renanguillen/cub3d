@@ -6,7 +6,7 @@
 /*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 15:11:29 by aminoru-          #+#    #+#             */
-/*   Updated: 2023/08/19 03:27:07 by aminoru-         ###   ########.fr       */
+/*   Updated: 2023/08/22 02:54:22 by aminoru-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# define BUFFER_SIZE 42
 
-// Part 1 functions
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
@@ -40,8 +40,6 @@ char	*ft_strnstr(const char *big, const char *little, size_t len);
 int		ft_atoi(const char *str);
 void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *s1);
-
-// Part 2 functions
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
@@ -53,11 +51,14 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
-
-// Cub functions
-int					ft_matrix_strlen(char **matrix);
-void				ft_matrix_strdel(char **matrix);
-char				**ft_matrix_join(char **matrix, char *str);
-char				**ft_matrix_strdup(char **matrix);
-void				ft_strdel(char **pont);
+int		ft_matrix_strlen(char **matrix);
+void	ft_matrix_strdel(char **matrix);
+char	**ft_matrix_join(char **matrix, char *str);
+char	**ft_matrix_strdup(char **matrix);
+void	ft_strdel(char **pont);
+char	*get_next_line1(int fd);
+int		get_next_line(int fd, char **line);
+char	*ft_strjoin_free1(char *s1, char const *s2, size_t size2);
+char	*ft_strindexcpy(char **save, char *str, size_t index);
+int		ft_linebreak(char *str);
 #endif

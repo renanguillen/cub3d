@@ -6,7 +6,7 @@
 /*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 03:12:36 by aminoru-          #+#    #+#             */
-/*   Updated: 2023/08/19 03:44:16 by aminoru-         ###   ########.fr       */
+/*   Updated: 2023/08/22 03:00:28 by aminoru-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@
 # include <mlx.h>
 # include "../libft/libft.h"
 
+t_data  *init_all(char *patch);
+t_inter	*init_inter(void);
 t_data	*init(char *patch);
 void	init_rays(t_data *data);
 int		destroy(t_data *data);
@@ -63,5 +65,8 @@ void	raycasting(t_data *data);
 void	project_rays(t_data *data, t_ray *ray);
 void	render_3d_projected_walls(t_data *data);
 double	normalize_angle(double angle);
+void	destroy_image(t_data *data);
+void	destroy_player(t_player *player);
+void	destroy_map(t_map *map);
 
 #endif
