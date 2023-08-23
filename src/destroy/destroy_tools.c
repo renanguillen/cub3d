@@ -6,7 +6,7 @@
 /*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 03:14:09 by aminoru-          #+#    #+#             */
-/*   Updated: 2023/08/19 03:14:10 by aminoru-         ###   ########.fr       */
+/*   Updated: 2023/08/23 03:46:50 by aminoru-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,12 @@ void	destroy_rays(t_data *data)
 {
 	int	index;
 
-	index = 0;
-	while (index < NUM_RAYS)
+	index = -1;
+	while (++index < NUM_RAYS)
 	{
 		free(data->rays[index].render);
 		free(data->rays[index].hrz);
 		free(data->rays[index].vert);
-		index++;
 	}
 }
 

@@ -17,16 +17,13 @@ static int	check_node(char *node)
 	int	count;
 	int	size;
 
-	count = 0;
+	count = -1;
 	size = ft_strlen(node);
 	if (size < 0 || size > 3)
 		return (1);
-	while (count < size)
-	{
+	while (++count < size)
 		if (!ft_isdigit(node[count]))
 			return (1);
-		count++;
-	}
 	return (0);
 }
 
@@ -36,14 +33,14 @@ static int	check_color(char *color)
 	int		index;
 	int		nb;
 
-	index = 0;
+	index = -1;
 	rgb_color = ft_split(color, ',');
 	if (ft_matrix_strlen(rgb_color) != 3)
 	{
 		ft_matrix_strdel(rgb_color);
 		return (1);
 	}
-	while (index < 3)
+	while (++index < 3)
 	{
 		nb = ft_atoi(rgb_color[index]);
 		if (!(nb > -1 && nb < 256) || check_node(rgb_color[index]))
@@ -51,7 +48,6 @@ static int	check_color(char *color)
 			ft_matrix_strdel(rgb_color);
 			return (1);
 		}
-		index++;
 	}
 	ft_matrix_strdel(rgb_color);
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 03:13:47 by aminoru-          #+#    #+#             */
-/*   Updated: 2023/08/19 03:13:48 by aminoru-         ###   ########.fr       */
+/*   Updated: 2023/08/23 03:48:51 by aminoru-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,12 @@ static char	*extraction(char *line, int size_key)
 	int		size;
 	char	*result;
 
-	index = 0;
+	index = -1;
 	size = ft_strlen(line);
 	result = NULL;
 	result = ft_calloc(sizeof(char), size - size_key + 2);
-	while (index < size -1 && index + size_key < size)
-	{
+	while (++index < size -1 && index + size_key < size)
 		result[index] = line[index + size_key];
-		index++;
-	}
 	result[index] = '\0';
 	return (result);
 }
@@ -54,7 +51,7 @@ char	*extract_content(char **file, char *key, int i)
 	index = 0;
 	size = ft_strlen(key);
 	result = NULL;
-	while (file[index] != NULL)
+	while (file[index])
 	{
 		i = size;
 		if (!(size + 1 < ft_strlen(file[index])))

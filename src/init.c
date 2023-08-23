@@ -6,7 +6,7 @@
 /*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 03:15:54 by aminoru-          #+#    #+#             */
-/*   Updated: 2023/08/23 01:21:10 by aminoru-         ###   ########.fr       */
+/*   Updated: 2023/08/23 14:29:20 by aminoru-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,8 +120,8 @@ void	init_rays(t_data *data)
 {
 	int	index;
 
-	index = 0;
-	while (index < NUM_RAYS)
+	index = -1;
+	while (++index < NUM_RAYS)
 	{
 		data->rays[index].hrz = init_inter();
 		data->rays[index].vert = init_inter();
@@ -133,6 +133,5 @@ void	init_rays(t_data *data)
 		data->rays[index].is_facing_up = 0;
 		data->rays[index].is_facing_right = 0;
 		data->rays[index].is_facing_left = 0;
-		index++;
 	}
 }

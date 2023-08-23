@@ -6,7 +6,7 @@
 /*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 03:13:14 by aminoru-          #+#    #+#             */
-/*   Updated: 2023/08/23 00:13:18 by aminoru-         ###   ########.fr       */
+/*   Updated: 2023/08/23 03:40:43 by aminoru-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,13 @@ static int	check_position_map(char **file)
 	int	index;
 	int	map;
 
-	index = 0;
+	index = -1;
 	map = 0;
-	while (file[index] != NULL)
-	{
+	while (file[++index] != NULL)
 		if (is_line_map(file[index]))
 			map = 1;
 		else if (map == 1)
 			return (1);
-		index++;
-	}
 	return (0);
 }
 
@@ -37,10 +34,10 @@ static int	check_contents(char **file, char *key)
 	int	size;
 	int	count;
 
-	index = 0;
+	index = -1;
 	find = 0;
 	size = ft_strlen(key);
-	while (file[index] != NULL)
+	while (file[++index] != NULL)
 	{
 		count = 0;
 		if (ft_strlen(file[index]) > 0)
@@ -50,7 +47,6 @@ static int	check_contents(char **file, char *key)
 			if (count == size)
 				find++;
 		}
-		index++;
 	}
 	if (find == 1)
 		return (0);
@@ -64,10 +60,10 @@ int	check_integrity_map(char **file)
 	int	map_break;
 	int	line_map;
 
-	index = 0;
+	index = -1;
 	map_active = 0;
 	map_break = 0;
-	while (file[index] != NULL)
+	while (file[++index])
 	{
 		line_map = is_line_map(file[index]);
 		if (map_active == 0 && line_map == 1)
@@ -76,7 +72,6 @@ int	check_integrity_map(char **file)
 			map_break = 1;
 		else if (map_break == 1 && line_map == 1)
 			return (1);
-		index++;
 	}
 	if (map_active == 1)
 		return (0);

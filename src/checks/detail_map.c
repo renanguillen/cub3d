@@ -16,9 +16,8 @@ static int	check_spaces_aux(char **map, int i)
 {
 	int	index;
 
-	index = 0;
-	while (map[i][index])
-	{
+	index = -1;
+	while (map[i][++index])
 		if (map[i][index] == ' ')
 		{
 			if (map[i][index + 1] && ft_strchr("NSEW0", map[i][index + 1]))
@@ -31,22 +30,17 @@ static int	check_spaces_aux(char **map, int i)
 			if ((i > 0) && ft_strchr("NSEW0", map[i - 1][index]))
 				return (1);
 		}
-		index++;
-	}
 	return (0);
 }
 
 static int	check_spaces(t_map *map)
 {
-	int	i;
+	int	index;
 
-	i = 0;
-	while (map->map_matrix[i])
-	{
-		if (check_spaces_aux(map->map_matrix, i))
+	index = -1;
+	while (map->map_matrix[++index])
+		if (check_spaces_aux(map->map_matrix, index))
 			return (1);
-		i++;
-	}
 	return (0);
 }
 
@@ -56,8 +50,8 @@ static int	check_characters_map(char **map)
 	int		count;
 	char	temp;
 
-	index = 0;
-	while (map[index] != NULL)
+	index = -1;
+	while (map[++index])
 	{
 		count = 0;
 		while (map[index][count])
@@ -69,7 +63,6 @@ static int	check_characters_map(char **map)
 			else
 				return (1);
 		}
-		index++;
 	}
 	return (0);
 }

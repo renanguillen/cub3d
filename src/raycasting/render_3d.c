@@ -6,7 +6,7 @@
 /*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 03:15:19 by aminoru-          #+#    #+#             */
-/*   Updated: 2023/08/19 03:15:20 by aminoru-         ###   ########.fr       */
+/*   Updated: 2023/08/23 14:28:23 by aminoru-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,9 @@ static void	draw_sky(t_data *data, t_ray *ray, int x)
 {
 	int	y;
 
-	y = 0;
-	while (y < ray->render->wall_top_pixel)
-	{
+	y = -1;
+	while (++y < ray->render->wall_top_pixel)
 		draw_pixel_color(data->image, x, y, data->map->color_sky);
-		y++;
-	}
 }
 
 static void	draw_bottom(t_data *data, t_ray *ray, int x)
@@ -53,8 +50,8 @@ void	render_3d_projected_walls(t_data *data)
 	int		x;
 	t_ray	*ray;
 
-	x = 0;
-	while (x < NUM_RAYS)
+	x = -1;
+	while (++x < NUM_RAYS)
 	{
 		ray = &data->rays[x];
 		ray->render->proj_wall_height = (TILE_SIZE / ray->distance)
@@ -64,6 +61,5 @@ void	render_3d_projected_walls(t_data *data)
 		draw_sky(data, ray, x);
 		draw_wall(data, ray, x);
 		draw_bottom(data, ray, x);
-		x++;
 	}
 }

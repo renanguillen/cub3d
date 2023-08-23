@@ -6,7 +6,7 @@
 /*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 03:15:14 by aminoru-          #+#    #+#             */
-/*   Updated: 2023/08/19 03:15:16 by aminoru-         ###   ########.fr       */
+/*   Updated: 2023/08/23 14:27:31 by aminoru-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,15 +79,14 @@ void	raycasting(t_data *data)
 	int		column_id;
 
 	ray_angle = normalize_angle(data->player->angle + (FOV_ANGLE / 2));
-	column_id = 0;
-	while (column_id < NUM_RAYS)
+	column_id = -1;
+	while (++column_id < NUM_RAYS)
 	{
 		clear_ray(&data->rays[column_id]);
 		data->rays[column_id].ray_angle = ray_angle;
 		project_rays(data, &data->rays[column_id]);
 		calc_dist(data, &data->rays[column_id]);
 		ray_angle = normalize_angle(ray_angle - FOV_ANGLE / NUM_RAYS);
-		column_id++;
 	}
 	render_3d_projected_walls(data);
 }
