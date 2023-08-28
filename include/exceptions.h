@@ -6,7 +6,7 @@
 /*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 03:12:58 by aminoru-          #+#    #+#             */
-/*   Updated: 2023/08/23 00:23:17 by aminoru-         ###   ########.fr       */
+/*   Updated: 2023/08/28 23:18:26 by aminoru-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@
 # define ERROR_SKY_COLOR "Error\nSky color is wrong\n"
 # define ERROR_FLOOR_COLOR "Error\nThe floor color is wrong\n"
 # define ERROR_WALLS "Error\nMap walls are wrong\n"
-# define ERROR_WALLS_NOT_CLOSE "Error\nThe walls of the map are not correctly closed\n"
+# define ERROR_WALLS_NOT_CLOSE "Error\nThe walls of the map \
+								 are not correctly closed\n"
 # define ERROR_PLAYER "Error\nThe player is wrong\n"
 # define ERROR_CHARACTER "Error\nWrong character in map\n"
 # define ERROR_TEXTURE_DIR "Error\nInvalid texture dir\n"

@@ -6,7 +6,7 @@
 /*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 03:12:36 by aminoru-          #+#    #+#             */
-/*   Updated: 2023/08/23 01:37:42 by aminoru-         ###   ########.fr       */
+/*   Updated: 2023/08/28 23:17:52 by aminoru-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 # include <mlx.h>
 # include "../libft/libft.h"
 
-t_data  *init_all(char *patch);
+t_data	*init_all(char *patch);
 t_data	*init(char *patch);
 t_inter	*init_inter(void);
 int		destroy(t_data *data);
