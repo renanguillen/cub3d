@@ -18,6 +18,7 @@ static int	check_spaces_aux(char **map, int i)
 
 	index = -1;
 	while (map[i][++index])
+	{
 		if (map[i][index] == ' ')
 		{
 			if (map[i][index + 1] && ft_strchr("NSEW0", map[i][index + 1]))
@@ -30,6 +31,7 @@ static int	check_spaces_aux(char **map, int i)
 			if ((i > 0) && ft_strchr("NSEW0", map[i - 1][index]))
 				return (1);
 		}
+	}	
 	return (0);
 }
 

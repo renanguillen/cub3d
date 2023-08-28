@@ -6,7 +6,7 @@
 /*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 03:13:14 by aminoru-          #+#    #+#             */
-/*   Updated: 2023/08/23 03:40:43 by aminoru-         ###   ########.fr       */
+/*   Updated: 2023/08/28 14:15:39 by aminoru-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,12 @@ static int	check_position_map(char **file)
 	index = -1;
 	map = 0;
 	while (file[++index] != NULL)
+	{
 		if (is_line_map(file[index]))
 			map = 1;
 		else if (map == 1)
 			return (1);
+	}
 	return (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 03:13:51 by aminoru-          #+#    #+#             */
-/*   Updated: 2023/08/23 03:50:01 by aminoru-         ###   ########.fr       */
+/*   Updated: 2023/08/28 14:18:04 by aminoru-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,14 @@ static void	map_size(t_data *data, char **file)
 	lines = 0;
 	columns = 0;
 	while (file[++index])
+	{
 		if (is_line_map(file[index]))
 		{
 			if (columns < ft_strlen(file[index]))
 				columns = ft_strlen(file[index]);
 			lines++;
 		}
+	}	
 	data->map->nb_columns = columns;
 	data->map->nb_lines = lines;
 	data->map->height_px = lines * TILE_SIZE;
@@ -66,6 +68,7 @@ void	extract_map(t_data *data, char **file)
 	temp = NULL;
 	map_size(data, file);
 	while (file[++index])
+	{
 		if (is_line_map(file[index]))
 		{
 			temp = complet_line(data->map->nb_columns, file[index]);
@@ -73,5 +76,6 @@ void	extract_map(t_data *data, char **file)
 			ft_strdel(&temp);
 			temp = NULL;
 		}
+	}	
 	data->map->map_matrix = result;
 }

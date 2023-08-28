@@ -6,7 +6,7 @@
 #    By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/19 03:16:04 by aminoru-          #+#    #+#              #
-#    Updated: 2023/08/23 01:38:18 by aminoru-         ###   ########.fr        #
+#    Updated: 2023/08/28 14:12:41 by aminoru-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ MLX_LIB = -lbsd -lmlx -lXext -lX11 -lm -lz
 INCS = -I ./include/
 SRCS = 	./src/main.c \
 		./src/init.c \
+		./src/init_complement.c \
 		./src/load.c \
 		./src/key_hook.c \
 		./src/checks/contents_file.c \

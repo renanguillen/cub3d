@@ -6,7 +6,7 @@
 /*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 03:14:47 by aminoru-          #+#    #+#             */
-/*   Updated: 2023/08/23 14:25:18 by aminoru-         ###   ########.fr       */
+/*   Updated: 2023/08/28 14:16:22 by aminoru-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	get_player(t_data *data)
 	{
 		x = -1;
 		while (data->map->map_matrix[y][++x])
+		{
 			if (ft_strchr("NSWE", data->map->map_matrix[y][x]))
 			{
 				data->player->pos_x = ((x + 0.5) * TILE_SIZE);
@@ -41,5 +42,6 @@ void	get_player(t_data *data)
 				set_angle(data, y, x);
 				data->map->map_matrix[y][x] = '0';
 			}
+		}	
 	}
 }
